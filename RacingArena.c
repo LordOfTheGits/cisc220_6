@@ -5,6 +5,7 @@
 #include <string.h>
 
 int carPosition[6] = {0,0,0,0,0.0};
+int winner = 0;
 
 void *userCar(void *string) {
     while (carPosition[1]<40){
@@ -58,18 +59,22 @@ void *printThread(void *threadid){
         printf("Welcome to Cisc220 Racing Arena\n");
         printf("Hit Enter to move forward \n");
         for (int i = 1; i < 6; i++){
-            for (int x = 0; x < carPosition[i]; x++) {
+        	int x;
+            for (x = 0; x < carPosition[i]; x++) {
                 printf("~");
             }
             printf("|->");
-            for (int x = 40; x > carPosition[i]; x--) {
+            for (x = 40; x > carPosition[i]; x--) {
                 printf(" ");
             }
             printf("# Line %d #\n", i);
     	    if (carPosition[i] == 40){
-		        printf("Player %d Wins!\n", i);
-		        pthread_exit(NULL);
+		        winner=i;
             }
+        }
+        if (winner){
+        	printf("Player %d Wins!\n", winner);
+        	pthread_exit(NULL);
         }
         usleep(133337);
     }
