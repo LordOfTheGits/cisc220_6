@@ -78,7 +78,7 @@ void *printThread(void *threadid){
 int main(){
 	pthread_t run;
     pthread_create(&run, NULL, userCar, NULL);
-    pthread_create(&run, NULL, computerrun, NULL);
+    pthread_create(&run, NULL, computerCar2, NULL);
     pthread_create(&run, NULL, computerCar3, NULL);
     pthread_create(&run, NULL, computerCar4, NULL);
     pthread_create(&run, NULL, computerCar5, NULL);
