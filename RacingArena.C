@@ -76,13 +76,13 @@ void *printThread(void *threadid){
 }	
 
 int main(){
-	pthread_t car1, car2, print;
-    pthread_create(&car1, NULL, userCar, NULL);
-    pthread_create(&car2, NULL, computerCar2, NULL);
-    pthread_create(&car2, NULL, computerCar3, NULL);
-    pthread_create(&car2, NULL, computerCar4, NULL);
-    pthread_create(&car2, NULL, computerCar5, NULL);
-    pthread_create(&print, NULL, printThread, NULL);
-    pthread_join(print, NULL);
+	pthread_t run;
+    pthread_create(&run, NULL, userCar, NULL);
+    pthread_create(&run, NULL, computerrun, NULL);
+    pthread_create(&run, NULL, computerCar3, NULL);
+    pthread_create(&run, NULL, computerCar4, NULL);
+    pthread_create(&run, NULL, computerCar5, NULL);
+    pthread_create(&run, NULL, printThread, NULL);
+    pthread_join(run, NULL);
     exit(0);
 }
