@@ -16,7 +16,7 @@ void *userCar(void *string) {
 }
 
 void *computerCar(void *string){
-	int lane = (int)string;
+	long lane = (long)string;
 	while (carPosition[lane]<40){
 		carPosition[lane] += 1;
 		usleep(1000*(rand()%100));
