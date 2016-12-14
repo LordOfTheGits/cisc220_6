@@ -39,13 +39,13 @@ void *printThread(void *threadid){
             for (x = 40; x > carPosition[i]; x--) {
                 printf(" ");
             }
-            printf("# Line %d #\n", i);
+            printf("# Line %d #\n", i+1);
     	    if (carPosition[i] == 40){
 		        winner=i;
             }
         }
         if (winner){
-        	printf("Player %d Wins!\n", winner);
+        	printf("Player %d Wins!\n", winner+1);
         	pthread_exit(NULL);
         }
         usleep(133337);
